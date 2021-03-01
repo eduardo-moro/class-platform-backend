@@ -1,18 +1,18 @@
-const express = require("express");
 const mysql = require("mysql");
 
-var db = mysql.createConnection({
+const db = mysql.createConnection({
     host: 'localhost',
-    user: 'admin',
+    user: 'root',
     password: '',
     database: 'class-platform'
-})
+});
 
 db.connect((error) => {
     if(error) {
         console.log(error);
     } else {
-        console.log('success');
+        console.log('Conectado com sucesso!');
     }
 });
 
+module.exports = db
